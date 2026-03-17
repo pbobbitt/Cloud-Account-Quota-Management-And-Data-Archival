@@ -61,28 +61,16 @@ To ensure no data corruption occurred during the 15GB/s transition from the Goog
 * **Algorithm:** SHA-256
 * **Verification Logic:** By generating a unique digital fingerprint (hash) of the local file, I can verify that the data matches the source. In a production environment, this protects against "bit rot" and incomplete transfers.
 
-#### Data Integrity Evidence
-```powershell
-# Output from PowerShell Get-FileHash verification
-Algorithm       Hash                                                                   Path
----------       ----                                                                   ----
-SHA256          1A03856E4E320B50D907692A85480DE0515B40C50B76ECF0DFA9CCE7401619CA       C:\Users\pbobb\Downloads\take...
-```
+#### Data Integrity Evidence (Multi-Volume Verification)
+To ensure the integrity of the entire migration, I generated SHA-256 hashes for all volumes using the PowerShell `Get-FileHash` cmdlet.
 
-#### Data Integrity Evidence
-To ensure the integrity of the entire migration, I generated SHA-256 hashes for all six downloaded volumes.
-
-```powershell
-# Output from PowerShell Get-FileHash verification
 | Volume | SHA-256 Hash | Status |
 | :--- | :--- | :--- |
 | Part 1 | 1A03856E4E320B50D907692A85480DE0515B40C50B76ECF0DFA9CCE7401619CA | **Verified** |
-| Part 2 | [Insert Hash] | **Verified** |
-| Part 3 | [Insert Hash] | **Verified** |
-| Part 4 | [Insert Hash] | **Verified** |
-| Part 5 | [Insert Hash] | **Verified** |
-| Part 6 | [Insert Hash] | **Verified** |
-```
+| Part 2 | 88D53AAFCD867C59059D54724F3220BD3A2C18A96125045002F38F1004BC2BEF | **Verified** |
+| Part 3 | 9782F20ACDB6E7D75614F4F44714D7FCF37A99578165EDF992C7E7F9109C714C | **Verified** |
+| Part 4 | C6A7E7C94416A2CFA3AF3C41868C2B0E3183B1909AD5F9BFCE35C1C6EA1290CF | **Verified** |
+
 ### 5. Documentation & Maintenance
 - Retention Policy: Established a policy to move media older than 1 year to local archival storage annually.
 - Audit Schedule: Set a quarterly calendar reminder to monitor storage growth and perform manual deduplication.
