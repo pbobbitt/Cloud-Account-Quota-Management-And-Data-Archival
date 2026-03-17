@@ -27,22 +27,20 @@ A professional Google Workspace account reached 97% storage utilization, creatin
 ### 2. Design & Strategy
 Before execution, I conducted a storage audit to categorize data. I decided to use Google Takeout to export all high-utilization categories. To ensure download stability and prevent file corruption, I configured the export to use 2GB .zip volumes.
 
-
 ### 3. Implementation
 
-#### Step 1: SaaS Storage Audit
-I utilized the Google One Storage Manager to identify data "hotspots." The audit revealed that Google Photos and hidden Device Backups accounted for over 70% of total utilization.
+#### Phase 1: SaaS Audit & Identification
+I performed a granular audit of the storage exhaustion event via the Google One Management Console to prioritize data for migration.
+* **Observation:** Google Photos (**7.35 GB**) was identified as the primary "hotspot," representing ~50% of the total 15GB quota.
+* **Strategic Decision:** Categorized "Device Backup" (**3.61 GB**) as non-essential configuration metadata. Prioritized the archival of "Content Data" (Photos/Videos) for the initial migration phase.
+  
 > **Evidence:** See [Initial Storage Audit](https://github.com/pbobbitt/Google-Drive-Quota-Photos-Optimization-Lab/blob/main/images/Storage%20Audit%20Before.png) in Visual Documentation.
 
-#### Step 2: Data Archival (Google Takeout)
-To migrate the data without losing metadata (dates, locations, tags), I initiated a Google Takeout export. 
-* **Configuration:** Exported 52 folders.
-* **Optimization:** Used 2GB .zip volumes to mitigate risks of packet loss or timeout during the physical download phase.
-
-#### Step 3: Local Integrity Verification
-Once the transfer to the local NTFS drive was complete, I used PowerShell to verify the hash of each volume. 
-powershell
-Get-FileHash "C:\Downloads\takeout-20260317-001.zip"
+#### Phase 2: Data Archival (Export Configuration)
+Utilized Google Takeout to initiate the SaaS-to-On-Premise migration. I implemented the following technical constraints to ensure **Fault Tolerance**:
+* **Compression Format:** `.zip` (chosen for universal OS compatibility and ease of extraction).
+* **Volume Chunking:** `2GB` increments. 
+* **Technical Justification:** Smaller volumes mitigate the risk of data corruption from packet loss or session timeouts during large-scale transfers.
 
 
 ### 4. Quality Assurance (QA) & Verification
