@@ -68,4 +68,4 @@ Prior to execution, I performed a storage audit to categorize data. I decided to
 
 Screenshots, diagrams, or command outputs.
 
-![Description of Screenshot](link-to-image-here)
+<img src="images/storage%20utilization%20before.png" alt="Google Drive 97 Percent Full" width="40%">
