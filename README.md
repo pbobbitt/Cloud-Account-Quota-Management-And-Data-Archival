@@ -68,10 +68,5 @@ Prior to execution, I performed a storage audit to categorize data. I decided to
 
 ### Before
 
-#### Storage Utilization
-<img src="images/storage%20utilization%20before.png" alt="Google Drive 97 Percent Full" width="60%">
-
-#### Storage Details
-<img src="images/storage%20details%20before.png" alt="Google Drive Categorized" width="60%">
-
-
+#### Initial Storage Audit & Identification
+<img src="images/Storage%20Audit%20Before.png" alt="Google One Storage 97 Percent Full Breakdown" width="70%">
