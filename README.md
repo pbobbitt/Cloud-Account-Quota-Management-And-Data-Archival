@@ -122,3 +122,9 @@ To ensure the long-term integrity of this newly implemented storage architecture
 
 #### Powershell Hash Command
 <img src="images/powershell%20Get-FileHash.png" alt="Powershell Command" width="70%">
+
+
+## Disclaimer & AI Disclosure
+While the **technical architecture, troubleshooting, data migration, and verification** of this lab were performed entirely by the author, **Generative AI** was utilized as a collaborative tool to assist in the structured formatting, professional terminology refinement, and documentation of this report. 
+
+This approach was taken to ensure the lab's technical findings are communicated with the clarity and professional standards required in a production IT environment.
