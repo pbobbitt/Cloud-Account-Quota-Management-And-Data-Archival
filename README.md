@@ -1,31 +1,34 @@
 # Google Drive Quota & Photos Optimization Lab
 
 ## Executive Summary
-This project demonstrates migrating critical data from a near-capacity SaaS environment to local physical storage. It highlights the ability to manage storage quotas, ensure data integrity during transit, and implement archival policies to maintain service continuity.
+This project demonstrates migrating critical data from a near-capacity SaaS environment to local physical storage and redesigning cloud architecture to prevent future quota exhaustion. It highlights the ability to manage storage quotas, ensure data integrity, and implement multi-account orchestration (IAM) to maintain service continuity.
 
-* **Primary Skill:** Cloud Data Migration
+* **Primary Skill:** Cloud Data Migration, Identity & Access Management (IAM)
 * **Certification Alignment:** CompTIA A+, Cloud+
 
 ## The Scenario
-A professional Google Workspace account reached 97% storage utilization, creating an imminent risk of service interruption (inability to receive emails or sync documents). A solution was required to audit the data, archive "cold" assets to on-premise hardware, and optimize remaining cloud storage without data loss.
+A professional Google Workspace account reached 97% storage utilization, creating an imminent risk of service interruption (inability to receive emails or sync documents). A solution was required to audit the data, archive "cold" assets to on-premise hardware, and restructure the cloud ingestion workflow to optimize remaining storage without data loss or service interruption.
 
 
 ## Environment & Tools
 * **Platform/OS:** Google Workspace / Windows 11
-* **Tools Used:** Google Takeout, Google One Storage Manager, PowerShell
-* **Methodology:** 3-2-1 Backup Strategy, Data Lifecycle Management
+* **Tools Used:** Google Takeout, Google One Storage Manager, PowerShell, Google Photos Partner Sharing (IAM).
+* **Methodology:** 3-2-1 Backup Strategy, Data Lifecycle Management, Resource Isolation.
 
 ## Deployment & Execution
 
 ### 1. Requirements & Scope
-* Goal: Reduce cloud storage utilization to below 20%.
+* Goal: Reduce cloud storage utilization and establish a sustainable long-term backup architecture.
 
 * Constraint: Ensure zero data loss during migration and maintain original file metadata.
 
-* Scope: 15GB of unstructured data (Photos, Videos, and Drive documents).
+* Scope: 15GB of unstructured data (Photos, Videos, and Drive documents) and multi-account synchronization logic.
 
 ### 2. Design & Strategy
-Before execution, I conducted a storage audit to categorize data. I decided to use Google Takeout to export all high-utilization categories. To ensure download stability and prevent file corruption, I configured the export to use 2GB .zip volumes.
+Before execution, I conducted a storage audit to categorize data by utilization and retention value. I developed a two-pronged remediation strategy to address both the immediate service risk and long-term sustainability:
+
+* **Immediate Remediation (Data Migration):** Utilize **Google Takeout** to export high-utilization "hotspots" into 2GB fault-tolerant volumes. This ensures a bit-perfect transfer to local physical storage while minimizing the risk of archive corruption over standard residential network connections.
+* **Architectural Pivot (Service Isolation):** Transition future data ingestion to a dedicated, isolated storage service account. By utilizing **Partner Sharing (IAM)**, the primary account maintains a "Single Pane of Glass" user experience (viewing all assets in one library) while completely isolating the primary 15GB quota from future media growth.
 
 ### 3. Implementation Summary
 The remediation was executed through a methodical 7-phase "Audit-to-Architecture" workflow. For the granular technical procedures, PowerShell commands, and configuration steps associated with each phase, refer to the **[Full Implementation Log](TECHNICAL_IMPLEMENTATION.md)**.
