@@ -98,6 +98,12 @@ To ensure the long-term integrity of this newly implemented storage architecture
 * **Configuration Hardening:** Implemented a global **"Storage Saver"** ingestion policy to optimize bitrates for all future backups, effectively doubling the lifespan of the current storage tier.
 * **Financial ROI:** Successfully avoided immediate recurring SaaS subscription costs for a 100GB Google One upgrade, demonstrating a "Cost-Optimization First" approach to cloud management.
 
+## Technical Competencies Demonstrated
+
+* **SaaS Administration:** Expertly managed Google Workspace quotas and service continuity for a high-utilization environment (97% saturation), preventing a critical "Service Refusal" state.
+* **Data Lifecycle Management (DLM):** Executed a multi-tier storage strategy, transitioning "Hot" data (active Cloud assets) to "Cold" storage (Physical NTFS Archive) to optimize infrastructure costs and performance.
+* **Information Security:** Implemented rigorous data integrity protocols using **SHA-256 Cryptographic Hashing** to verify bit-perfect transfers and mitigate the risk of "bit rot" during migration.
+* **Identity & Access Management (IAM):** Orchestrated cross-tenant resource sharing via **Partner Linking**, successfully decoupling physical storage from a primary identity while maintaining a seamless, unified user experience.
 
 ## Visual Documentation
 
