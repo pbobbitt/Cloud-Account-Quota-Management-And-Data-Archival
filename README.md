@@ -39,7 +39,7 @@ This project addressed a critical "Storage Full" event in a cloud environment. I
 **The account was successfully returned to a "Healthy" status with 7.27 GB of recovered capacity. All archived data was verified for integrity on the local physical drive, and new automated policies are in place to prevent future storage overages.**
 
 > **Full Technical Deep Dive**
-> For specific configuration steps and the detailed implementation log, please see: **[Implementation Log (Detailed Version)](https://github.com/pbobbitt/Google-Drive-Quota-Photos-Optimization-Lab)**
+> For specific configuration steps and the detailed implementation log, please see: **[Implementation Log (Detailed Version)](https://github.com/pbobbitt/Cloud-Account-Quota-Management-And-Data-Archival/blob/main/TECHNICAL_IMPLEMENTATION.md)**
 
 ## Visual Proof
 
